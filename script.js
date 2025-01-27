@@ -12,7 +12,14 @@ async function getWeather(){
     try {
         const response = await fetch(API_URL);
         const data = await response.json();
-        console.log(data.cod);
+        // console.log(data.cod);
+
+        if(data.cod == "404"){
+            document.getElementById("cityName").value = ""; 
+            document.getElementById("weatherInfo").innerHTML = `<h2>City Not Found</h2>`;
+            return;
+        }
+        console.log(data);
     } catch (error) {
         console.error(error);
     }
