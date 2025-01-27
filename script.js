@@ -19,6 +19,15 @@ async function getWeather(){
             document.getElementById("weatherInfo").innerHTML = `<h2>City Not Found</h2>`;
             return;
         }
+
+        const weatherInfo = `
+            <h2>Weather in ${data.name}</h2>
+            <h3>Temperature: ${data.main.temp}°C</h3>
+            <h3>Humidity: ${data.main.humidity}%</h3>
+            <h3>Weather: ${data.weather[0].main}</h3>
+        `;
+
+        document.getElementById("weatherInfo").innerHTML = weatherInfo;
         console.log(data);
     } catch (error) {
         console.error(error);
