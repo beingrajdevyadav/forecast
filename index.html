@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forecast - Rajdev Yadav</title>
 
     <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Custom CSS  -->
-     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <nav>
@@ -21,21 +25,39 @@
 
             <button>History</button>
         </nav>
-        
+
         <hr>
     </header>
-    
-    <section>
-        <div class="search-box">
-            <input type="text" id="cityName" class="search-bar" placeholder="Enter City Name">
-            <button onclick="getWeather();" class="search-btn">Search</button>
+
+    <section class="main">
+       
+        <!-- weather-app-container -->
+        <div class="weather-app-container">
+            <div class="search-box">
+                <input type="text" id="cityName" class="search-bar" placeholder="Enter City Name">
+                <button onclick="getWeather();" class="search-btn">Search</button>
+            </div>
+
+            <!-- # Displaying the weather details -->
+            <div id="weatherInfo"></div>
         </div>
-        
-        <!-- # Displaying the weather details -->
-         <div id="weatherInfo"></div>
+
+
+         <!-- img-container  -->
+         <div class="img-container">
+                <img src="./img/world.svg" alt="img/world.svg">
+        </div>
     </section>
 
+
+    <!-- footer  -->
+<footer>
+    <p>Forecast By Rajdev Yadav</p>
+</footer>
+
+
     <!-- javascript code file is linked here -->
-     <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
