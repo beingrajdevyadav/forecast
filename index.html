@@ -20,40 +20,33 @@
         <nav>
             <div class="logo">
                 <h1> <i class="fa-solid fa-temperature-high"></i></h1>
-                <p>Forecast</p>
+                <h2>Forecast</h2>
             </div>
 
             <button>History</button>
         </nav>
 
-        <hr>
+        
     </header>
 
     <section class="main">
-       
-        <!-- weather-app-container -->
-        <div class="weather-app-container">
-            <div class="search-box">
-                <input type="text" id="cityName" class="search-bar" placeholder="Enter City Name">
-                <button onclick="getWeather();" class="search-btn">Search</button>
-            </div>
 
-            <!-- # Displaying the weather details -->
-            <div id="weatherInfo"></div>
+
+        <div class="search-box">
+            <input type="text" id="cityName" class="search-bar" placeholder="Enter City Name" autocomplete="off">
+            <button onclick="getWeather();" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
 
+        <!-- # Displaying the weather details -->
+        <div id="weatherInfo"></div>
 
-         <!-- img-container  -->
-         <div class="img-container">
-                <img src="./img/world.svg" alt="img/world.svg">
-        </div>
     </section>
 
 
     <!-- footer  -->
-<footer>
-    <p><i class="fa-solid fa-temperature-high"></i> Forecast By Rajdev Yadav</p>
-</footer>
+    <footer>
+        <p><i class="fa-solid fa-temperature-high"></i> Forecast By Rajdev Yadav</p>
+    </footer>
 
 
     <!-- javascript code file is linked here -->
