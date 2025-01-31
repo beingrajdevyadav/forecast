@@ -24,6 +24,7 @@ header nav {
     background-color: #00000063;
 }
 
+
 .logo {
     display: flex;
     justify-content: center;
@@ -36,7 +37,22 @@ header nav {
 
 }
 
-
+nav button{
+    background-color: #932566;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all .5s ease;
+}
+nav button:hover{
+    background-color: #b01e73;
+}
+nav button i {
+    font-size: 18px;
+    margin-right: 5px;
+}
 /* main section */
 .main {
     height: 82vh;
@@ -58,16 +74,28 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
     margin: 1rem auto;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    background-color: #00000052;
+    box-shadow: 2px 5px 10px  #ddd;
 }
 
 .search-box input {
     width: 80%;
     height: 100%;
     padding: 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: #ddd;
 }
 
+input::placeholder{
+    color: #ddd;
+}
 .search-box button {
     width: 20%;
     padding: 12px;
@@ -76,6 +104,8 @@ header nav {
     border: none;
     cursor: pointer;
     transition: all .5s ease;
+    border-radius: 5px;
+
 }
 .search-box button:hover{
     background-color: #b01e73;
