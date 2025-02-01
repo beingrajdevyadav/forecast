@@ -44,13 +44,16 @@ function createChart(){
     const ctx = document.getElementById('tempChart');
 
   new Chart(ctx, {
-    type: 'radar',
+    type: 'bar',
     data: {
       labels: ['Feel Like', 'Min Temp', 'Temp', 'Max Temp'],
       datasets: [{
         label: '# of Temperature',
         data: [23, 19, 20, 25],
-        borderWidth: 1
+        borderWidth: 1,
+        color: "#fff",
+        backgroundColor: "#932566",
+        hoverBackgroundColor: "#b01e73",
       }]
     },
     options: {
@@ -62,6 +65,9 @@ function createChart(){
       maintainHeighAspectRatio : false,
     }
   });
+
+  
+
 }
 
 createChart();
