@@ -49,6 +49,9 @@ async function getWeather() {
 
 function createChart(type) {
   const ctx = document.getElementById('tempChart');
+
+  if(type == "line" || type == "bar"){
+
  currentChart = new Chart(ctx, {
     type: type,
     data: {
@@ -72,7 +75,27 @@ function createChart(type) {
     }
   });
 
-
+}else{
+  currentChart = new Chart(ctx, {
+    type: type,
+    data: {
+      labels: ['Feel Like', 'Min Temp', 'Temp', 'Max Temp'],
+      datasets: [{
+        label: '# of Temperature',
+        data: [23, 19, 20, 25],
+        borderWidth: 1,
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      },
+      maintainHeighAspectRatio: false,
+    }
+  });
+}
 
 }
 
