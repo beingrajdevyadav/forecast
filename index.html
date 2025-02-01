@@ -37,12 +37,16 @@
             <button onclick="getWeather();" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
 
-        <!-- # Displaying the weather details -->
-        <div id="weatherInfo"></div>
-        <!-- temperature chart  -->
-        <div class="chart">
-            <canvas id="tempChart"></canvas>
+        <!-- # Details screen  -->
+        <div class="weather-details">
+            <!-- # Displaying the weather details -->
+            <div id="weatherInfo" class="weather-info"></div>
+            <!-- # Temperature chart  -->
+            <div class="chart">
+                <canvas id="tempChart"></canvas>
+            </div>
         </div>
+
     </section>
 
 
@@ -52,6 +56,9 @@
     </footer>
 
 
+
+    <!-- chart.js cdn link  -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- javascript code file is linked here -->
     <script src="script.js"></script>
 </body>

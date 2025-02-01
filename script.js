@@ -34,3 +34,34 @@ async function getWeather(){
     }
 
 }
+
+
+// ---------------------------------------- 
+//            Create Chart Function
+// ---------------------------------------- 
+
+function createChart(){
+    const ctx = document.getElementById('tempChart');
+
+  new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: ['Feel Like', 'Min Temp', 'Temp', 'Max Temp'],
+      datasets: [{
+        label: '# of Temperature',
+        data: [23, 19, 20, 25],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      },
+      maintainHeighAspectRatio : false,
+    }
+  });
+}
+
+createChart();

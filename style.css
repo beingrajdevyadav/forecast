@@ -12,6 +12,9 @@ body {
     height: 100vh;
     background-image: linear-gradient(#00000048, #00000025), url('./img/bg.gif');
     color: #ddd;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 
@@ -100,7 +103,7 @@ input::placeholder{
     width: 20%;
     padding: 12px;
     background-color: #932566;
-    color: #fff;
+    color: #ddd;
     border: none;
     cursor: pointer;
     transition: all .5s ease;
@@ -116,6 +119,32 @@ input::placeholder{
 
 img {
     width: 300px;
+}
+
+.weather-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    height: 65vh;
+    border: 1px solid #ddd;
+}
+.weather-info {
+    width: 35%;
+    height: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #00000052;
+    /* box-shadow: 2px 5px 10px  #ddd; */
+}
+
+.chart {
+    width: 60%;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #00000052;
 }
 
 footer {
