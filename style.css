@@ -196,8 +196,8 @@ input::placeholder {
 .chart {
     width: 60%;
     height: 50vh;
-    padding: 2rem;
-    margin: 2rem auto;
+    padding: 1rem;
+    margin: .5rem auto;
     border-radius: 10px;
     background-color: #ddd;
     display: flex;

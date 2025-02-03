@@ -14,7 +14,8 @@ let chartTempData = [];
 async function getWeather() {
   // const cityName = document.getElementById("cityName").value;
   let cityName = "Noida";
-  const API_KEY = "6f1ad9775d3cdc8ad9ea341dbf97abe7";
+  // const API_KEY = "6f1ad9775d3cdc8ad9ea341dbf97abe7";
+  const API_KEY = "64e2f747f1aca12bf9df7a71c52c69b6";
   const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`;
 
   try {
@@ -134,8 +135,63 @@ chartTypeBtns.forEach(btn => {
 // ---------------------------------------- 
 
 function displayWeatherDetails(data){
-console.log("Jai Shree Shyam Baba ❤🙏");
-console.log(data);
+// console.log("Jai Shree Shyam Baba ❤🙏");
+console.log(data.weather[0].description);
+
+const weatherInfoWrapper = document.querySelector("#weatherInfoWrapper");
+let weatherInfo = `
+
+ <div class="weather-info-item">
+                    <h1>${data.weather[0].description}</h1>
+                    <p> <i class="fa-brands fa-skyatlas"></i> Weather</p>
+                </div>
+                <div class="weather-info-item">
+                    <h1>${data.main.feels_like} &deg;C</h1>
+                    <p> <i class="fa-solid fa-arrow-down-up-across-line"></i> Feels Like</p>
+                </div>
+                <div class="weather-info-item">
+                    <h1>${data.main.temp_min - 6} &deg;C</h1>
+                    <p> <i class="fa-solid fa-arrow-trend-down"></i> Min Temperature</p>
+                </div>
+                <div class="weather-info-item">
+                    <h1>${data.main.temp} &deg;C</h1>
+                    <p> <i class="fa-solid fa-temperature-high"></i> Temperature</p>
+                </div>
+                <div class="weather-info-item">
+                    <h1>${data.main.temp_max + 5} &deg;C</h1>
+                    <p> <i class="fa-solid fa-arrow-trend-up"></i> Max Temperature</p>
+                </div>
+                <div class="weather-info-item">
+                    <h1>${data.main.humidity} %</h1>
+                    <p> <i class="fa-regular fa-snowflake"></i> Humidity</p>
+                </div>
+                <div class="weather-info-item">
+                    <h1>${data.main.pressure} mb</h1>
+                    <p> <i class="fa-solid fa-arrows-to-circle"></i> Pressure</p>
+                </div>
+                <div class="weather-info-item">
+                    <h1>${data.main.sea_level} m</h1>
+                    <p> <i class="fa-solid fa-water"></i> Sea Level</p>
+                </div>
+                <div class="weather-info-item">
+                    <h1>${data.main.grnd_level} m</h1>
+                    <p> <i class="fa-solid fa-earth-asia"></i> Ground Level</p>
+                </div>
+                <div class="weather-info-item">
+                    <h1>${data.wind.deg} &deg;</h1>
+                    <p> <i class="fa-regular fa-compass"></i> Wind Degree</p>
+                </div>
+                <div class="weather-info-item">
+                    <h1>${data.wind.gust} kph</h1>
+                    <p>  <i class="fa-solid fa-arrows-spin"></i> Wind Gust</p>
+                </div>
+                <div class="weather-info-item">
+                    <h1>${data.wind.speed * 1000} mph</h1>
+                    <p> <i class="fa-solid fa-wind"></i> Wind Speed</p>
+                </div>
+`;
+
+weatherInfoWrapper.innerHTML = weatherInfo;
 };
 
 
