@@ -160,12 +160,17 @@ input::placeholder {
 .weather-info-item h1{
     padding: 1rem;
     text-align: end;
-    font-size: 30px;
+    font-size: 24px;
 }
 .weather-info-item p{
     background-color: #932565a6;
     padding: .5rem 1rem;
     border-radius: 3px;
+    font-size: 14px;
+}
+.weather-info-item p i{
+    margin-right: 5px;
+    font-size: 18px;
 }
 .weather-info-item:hover {
     cursor: pointer;

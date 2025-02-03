@@ -28,7 +28,8 @@ async function getWeather() {
       return;
     }
 
-    console.log(data.main);
+    console.log(data);
+    // console.log(data.main);
     // console.log(currentChart);
     chartTempData = [];
     chartTempData.push(data.main.feels_like, data.main.temp_min - 6, data.main.temp, data.main.temp_max + 5);
