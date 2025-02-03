@@ -122,9 +122,6 @@ input::placeholder {
 
 
 .weather-details {
-    /* display: flex; */
-    /* justify-content: space-between; */
-    /* align-items: center; */
     margin-top: 1rem;
     height: 69vh;
     overflow-x: hidden;
@@ -157,28 +154,32 @@ input::placeholder {
     flex-direction: column;
     padding: .5rem;
 }
-.weather-info-item h1{
+
+.weather-info-item h1 {
     padding: 1rem;
     text-align: end;
     font-size: 24px;
 }
-.weather-info-item p{
+
+.weather-info-item p {
     background-color: #932565a6;
     padding: .5rem 1rem;
     border-radius: 3px;
     font-size: 14px;
 }
-.weather-info-item p i{
+
+.weather-info-item p i {
     margin-right: 5px;
     font-size: 18px;
 }
+
 .weather-info-item:hover {
     cursor: pointer;
     background-color: #00000010;
     box-shadow: 0 5px 12px #ddd;
 }
 
-.weather-info-item:hover p{
+.weather-info-item:hover p {
     background-color: #932565d1;
 }
 
@@ -193,23 +194,29 @@ input::placeholder {
 }
 
 .chart {
-    width: 40%;
-    height: 100%;
+    width: 60%;
+    height: 50vh;
     padding: 2rem;
+    margin: 2rem auto;
     border-radius: 10px;
-    background-color: #00000052;
     background-color: #ddd;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
-.chart .chart-type-controls {
+#tempChart {
+    height: 30vh;
+}
+
+ .chart-type-controls {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    background-color: #932565a1;
+    padding: 1rem;
+    border-radius: 10px;
 }
 
 .chart-type-controls button {
@@ -217,18 +224,20 @@ input::placeholder {
     cursor: pointer;
     border: none;
     outline: none;
-    background-color: #333;
-    color: #ddd;
+    background-color: #ddd;
+    color: #b01e73;
     transition: all .5s ease;
     border-radius: 15px;
 }
 
 .chart-type-controls button:hover {
     background-color: #b01e73;
+    color: #ddd;
 }
 
 .chart-type-btn.active-chart {
     background-color: #b01e73;
+    color: #ddd;
 }
 
 footer {

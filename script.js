@@ -44,17 +44,8 @@ async function getWeather() {
     }
 
 
-    console.log(chartTempData)
-    const weatherInfo = `
-            <h2>Weather in ${data.name}</h2>
-            <h3>Temperature : ${data.main.temp}°C</h3>
-            <h3>Humidity : ${data.main.humidity}%</h3>
-            <h3>Weather : ${data.weather[0].main}</h3>
-            <h3>Pressure : ${data.main.pressure}</h3>
-        `;
-
-    document.getElementById("weatherInfo").innerHTML = weatherInfo;
-    // console.log(data);
+    // to display weather details
+    displayWeatherDetails(data);
   } catch (error) {
     console.error(error);
   }
@@ -138,4 +129,18 @@ chartTypeBtns.forEach(btn => {
 });
 
 
+// ---------------------------------------- 
+//           Active Chart Function
+// ---------------------------------------- 
+
+function displayWeatherDetails(data){
+console.log("Jai Shree Shyam Baba ❤🙏");
+console.log(data);
+};
+
+
+
+
+
 getWeather();
+
