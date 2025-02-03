@@ -29,14 +29,21 @@ async function getWeather() {
     }
 
     console.log(data.main);
-
+    // console.log(currentChart);
+    chartTempData = [];
     chartTempData.push(data.main.feels_like, data.main.temp_min - 6, data.main.temp, data.main.temp_max + 5);
-    
-// to create chart
-// currentChart.destroy();
 
-    createChart(chartTempData ,"bar");
-console.log(chartTempData)
+    // to create chart
+
+    if (currentChart == undefined) {
+      createChart(chartTempData, "bar");
+    } else {
+      currentChart.destroy();
+      createChart(chartTempData, "bar");
+    }
+
+
+    console.log(chartTempData)
     const weatherInfo = `
             <h2>Weather in ${data.name}</h2>
             <h3>Temperature : ${data.main.temp}°C</h3>
@@ -125,7 +132,7 @@ chartTypeBtns.forEach(btn => {
     let chartType = btn.getAttribute("chartType");
     // console.log(chartType);
     currentChart.destroy();
-    createChart(chartTempData , chartType);
+    createChart(chartTempData, chartType);
   })
 });
 
