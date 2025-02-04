@@ -158,19 +158,19 @@ function displayWeatherDetails(data) {
                     <p> <i class="fa-brands fa-skyatlas"></i> Weather</p>
                 </div>
                 <div class="weather-info-item">
-                    <h1>${data.main.feels_like} &deg;C</h1>
+                    <h1>${(data.main.feels_like).toFixed(2)} &deg;C</h1>
                     <p> <i class="fa-solid fa-arrow-down-up-across-line"></i> Feels Like</p>
                 </div>
                 <div class="weather-info-item">
-                    <h1>${data.main.temp_min - 6} &deg;C</h1>
+                    <h1>${(data.main.temp_min - 6).toFixed(2)} &deg;C</h1>
                     <p> <i class="fa-solid fa-arrow-trend-down"></i> Min Temperature</p>
                 </div>
                 <div class="weather-info-item">
-                    <h1>${data.main.temp} &deg;C</h1>
+                    <h1>${(data.main.temp).toFixed(2)} &deg;C</h1>
                     <p> <i class="fa-solid fa-temperature-high"></i> Temperature</p>
                 </div>
                 <div class="weather-info-item">
-                    <h1>${data.main.temp_max + 5} &deg;C</h1>
+                    <h1>${(data.main.temp_max + 5).toFixed(2)} &deg;C</h1>
                     <p> <i class="fa-solid fa-arrow-trend-up"></i> Max Temperature</p>
                 </div>
                 <div class="weather-info-item">
