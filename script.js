@@ -12,9 +12,9 @@ let chartTempData = [];
 // ---------------------------------------- 
 
 async function getWeather() {
-  // const cityName = document.getElementById("cityName").value;
-  let cityName = "Noida";
-  // const API_KEY = "6f1ad9775d3cdc8ad9ea341dbf97abe7";
+  const cityName = document.getElementById("cityName").value;
+  // let cityName = "Noida";
+
   const API_KEY = "64e2f747f1aca12bf9df7a71c52c69b6";
   const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`;
 
@@ -29,7 +29,7 @@ async function getWeather() {
       return;
     }
 
-    console.log(data);
+    // console.log(data);
     // console.log(data.main);
     // console.log(currentChart);
     chartTempData = [];
@@ -38,10 +38,10 @@ async function getWeather() {
     // to create chart
 
     if (currentChart == undefined) {
-      createChart(chartTempData, "bar");
+      createChart("bar");
     } else {
       currentChart.destroy();
-      createChart(chartTempData, "bar");
+      createChart("bar");
     }
 
 
@@ -58,7 +58,7 @@ async function getWeather() {
 //            Create Chart Function
 // ---------------------------------------- 
 
-function createChart(data, type) {
+function createChart(type) {
   const ctx = document.getElementById('tempChart');
 
   if (type == "line" || type == "bar") {
@@ -125,7 +125,7 @@ chartTypeBtns.forEach(btn => {
     let chartType = btn.getAttribute("chartType");
     // console.log(chartType);
     currentChart.destroy();
-    createChart(chartTempData, chartType);
+    createChart( chartType);
   })
 });
 
@@ -134,13 +134,13 @@ chartTypeBtns.forEach(btn => {
 //           Active Chart Function
 // ---------------------------------------- 
 
-function displayWeatherDetails(data){
-// console.log("Jai Shree Shyam Baba ❤🙏");
-console.log(data.weather[0].description);
+function displayWeatherDetails(data) {
 
-const weatherInfoWrapper = document.querySelector("#weatherInfoWrapper");
-let weatherInfo = `
+  const weatherInfoWrapper = document.querySelector("#weatherInfoWrapper");
 
+  document.querySelector("#currentLocation").innerHTML = `Weather In ${data.name}`;
+
+  let weatherInfo = `
  <div class="weather-info-item">
                     <h1>${data.weather[0].description}</h1>
                     <p> <i class="fa-brands fa-skyatlas"></i> Weather</p>
@@ -191,7 +191,7 @@ let weatherInfo = `
                 </div>
 `;
 
-weatherInfoWrapper.innerHTML = weatherInfo;
+  weatherInfoWrapper.innerHTML = weatherInfo;
 };
 
 

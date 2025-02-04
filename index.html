@@ -43,7 +43,7 @@
             <!-- <div id="weatherInfo" class="weather-info"></div> -->
 
             <div class="details-header">
-                <h1> Weather In Noida <i class="fa-solid fa-cloud"></i></h1>
+                <h1> <span id="currentLocation"></span> <i class="fa-solid fa-cloud"></i></h1>
                 <hr>
             </div>
 
@@ -99,18 +99,26 @@
                 </div> -->
             </div>
 
-            <!-- # Temperature chart  -->
-            <div class="chart">
-                <canvas id="tempChart"></canvas>
+            <div id="chartWrapper">
+                <!-- # Temperature chart  -->
+                <div class="chart">
+                    <canvas id="tempChart"></canvas>
+                </div>
+
+                <!-- # Temperature chart controls -->
+                <div class="chart-type-controls">
+                    <button chartType="bar" class="chart-type-btn active-chart"><i
+                            class="fa-solid fa-chart-simple"></i></button>
+                    <button chartType="line" class="chart-type-btn"><i class="fa-solid fa-chart-line"></i></button>
+                    <button chartType="doughnut" class="chart-type-btn"><i class="fa-solid fa-circle-dot"></i></button>
+                    <button chartType="polarArea" class="chart-type-btn"><i class="fa-solid fa-chart-pie"></i></button>
+                </div>
             </div>
 
-            <!-- # Temperature chart controls -->
+            <!-- # Preloader -->
 
-            <div class="chart-type-controls">
-                <button chartType="bar"  class="chart-type-btn active-chart"><i class="fa-solid fa-chart-simple"></i></button>
-                <button chartType="line"  class="chart-type-btn"><i class="fa-solid fa-chart-line"></i></button>
-                <button chartType="doughnut"  class="chart-type-btn"><i class="fa-solid fa-circle-dot"></i></button>
-                <button chartType="polarArea"  class="chart-type-btn"><i class="fa-solid fa-chart-pie"></i></button>
+            <div id="preloader">
+                <img src="https://i.pinimg.com/originals/1c/88/83/1c8883a1768f2f77caf0371d49a68dc2.gif" alt="preloader">
             </div>
         </div>
 
