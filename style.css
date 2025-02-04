@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root{
+    --bg-color : #932566;
+    --light-bg-color: #cb388e;
+    --txt-color: #ddd;
+    --bold-dark : #00000063;
+    --mid-dark: #00000052;
+    --light-dark: #00000023;
+    --para-bg:#932565a6 ;
+    --para-hover-bg: #932565d1;
+}
+
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +38,7 @@ header nav {
     align-items: center;
     height: 8vh;
     padding: 1rem 15%;
-    background-color: #00000063;
+    background-color: var(--bold-dark);
 }
 
 
@@ -45,30 +59,25 @@ header nav {
 /* main section */
 .main {
     height: 84vh;
-    /* border: 1px solid #ddd; */
-    padding: 1rem 15% 0;
-    background-color: #00000023;
-
+    padding: 1rem 15% ;
+    background-color: var(--light-dark);
 }
 
 .weather-app-container {
     width: 30%;
     height: 100%;
-    /* border: 1px solid #ddd; */
 }
 
 .search-box {
     width: 50%;
-    /* height: 10%; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* border: 1px solid #ddd; */
     margin: 1rem auto;
     padding: .5rem 1rem;
     border-radius: 10px;
-    background-color: #00000052;
-    box-shadow: 2px 5px 10px #ddd;
+    background-color: var(--mid-dark);
+    box-shadow: 0px 3px 7px var(--txt-color);
 }
 
 .search-box input {
@@ -79,18 +88,18 @@ header nav {
     background-color: transparent;
     outline: none;
     border: none;
-    color: #ddd;
+    color: var(--txt-color);
 }
 
 input::placeholder {
-    color: #ddd;
+    color: var(--txt-color);
 }
 
 .search-box button {
     width: 20%;
     padding: 12px;
-    background-color: #932566;
-    color: #ddd;
+    background-color: var(--bg-color);
+    color: var(--txt-color);
     border: none;
     cursor: pointer;
     transition: all .5s ease;
@@ -99,7 +108,7 @@ input::placeholder {
 }
 
 .search-box button:hover {
-    background-color: #932566;
+    background-color: var(--light-bg-color);
 }
 
 
@@ -109,7 +118,7 @@ input::placeholder {
     height: 69vh;
     overflow-x: hidden;
     overflow-y: auto;
-    border: 1px solid #ddd;
+    border: 1px solid var(--txt-color);
     padding: 1rem;
     border-radius: 5px;
 }
@@ -131,7 +140,7 @@ input::placeholder {
     box-shadow: 0 3px 6px #aaa;
     border-radius: 3px;
     transition: all .5s ease;
-    background-color: #00000052;
+    background-color: var(--mid-dark);
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -145,7 +154,7 @@ input::placeholder {
 }
 
 .weather-info-item p {
-    background-color: #932565a6;
+    background-color: var(--para-bg);
     padding: .5rem 1rem;
     border-radius: 3px;
     font-size: 14px;
@@ -159,11 +168,11 @@ input::placeholder {
 .weather-info-item:hover {
     cursor: pointer;
     background-color: #00000010;
-    box-shadow: 0 5px 12px #ddd;
+    box-shadow: 0 5px 12px var(--txt-color);
 }
 
 .weather-info-item:hover p {
-    background-color: #932565d1;
+    background-color: var(--para-hover-bg);
 }
 
 .weather-info {
@@ -172,8 +181,7 @@ input::placeholder {
     margin-top: 1rem;
     padding: 1rem;
     border-radius: 10px;
-    background-color: #00000052;
-    /* box-shadow: 2px 5px 10px  #ddd; */
+    background-color: var(--mid-dark);
 }
 
 /* // chart  */
@@ -186,7 +194,7 @@ input::placeholder {
     padding: 1rem;
     margin: .5rem auto;
     border-radius: 10px;
-    background-color: #ddd;
+    background-color: var(--txt-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -211,7 +219,7 @@ input::placeholder {
     cursor: pointer;
     border: none;
     outline: none;
-    background-color: #ddd;
+    background-color: var(--txt-color);
     color: #b01e73;
     transition: all .5s ease;
     border-radius: 15px;
@@ -219,12 +227,12 @@ input::placeholder {
 
 .chart-type-controls button:hover {
     background-color: #b01e73;
-    color: #ddd;
+    color: var(--txt-color);
 }
 
 .chart-type-btn.active-chart {
     background-color: #b01e73;
-    color: #ddd;
+    color: var(--txt-color);
 }
 
 
@@ -238,7 +246,7 @@ input::placeholder {
 }
 #preloader img{
     width: 100%;
-    box-shadow: 0 10px 20px #932566;
+    box-shadow: 0 10px 20px var(--light-bg-color);
 }
 footer {
     width: 100%;
@@ -249,7 +257,7 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 1rem 15%;
-    background-color: #00000063;
+    background-color: var(--bold-dark);
 
 
 }
