@@ -35,18 +35,28 @@ async function getWeather() {
     chartTempData = [];
     chartTempData.push(data.main.feels_like, data.main.temp_min - 6, data.main.temp, data.main.temp_max + 5);
 
-    // to create chart
+
 
     if (currentChart == undefined) {
+      // to hide preloader
+      document.querySelector("#preloader").style.display = "none";
+      // to display weather details
+      displayWeatherDetails(data);
+      // to create chart
       createChart("bar");
     } else {
+      // to hide preloader
+      document.querySelector("#preloader").style.display = "none";
+      // to display weather details
+      displayWeatherDetails(data);
+       // to create chart
       currentChart.destroy();
       createChart("bar");
+     
     }
 
 
-    // to display weather details
-    displayWeatherDetails(data);
+
   } catch (error) {
     console.error(error);
   }
@@ -59,6 +69,8 @@ async function getWeather() {
 // ---------------------------------------- 
 
 function createChart(type) {
+  // to show chartWrapper <div></div>
+  document.querySelector("#chartWrapper").style.display ="block";
   const ctx = document.getElementById('tempChart');
 
   if (type == "line" || type == "bar") {
@@ -125,7 +137,7 @@ chartTypeBtns.forEach(btn => {
     let chartType = btn.getAttribute("chartType");
     // console.log(chartType);
     currentChart.destroy();
-    createChart( chartType);
+    createChart(chartType);
   })
 });
 
