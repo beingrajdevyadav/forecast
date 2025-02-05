@@ -63,10 +63,7 @@ header nav {
     background-color: var(--light-dark);
 }
 
-.weather-app-container {
-    width: 30%;
-    height: 100%;
-}
+
 
 .search-box {
     width: 50%;
@@ -264,4 +261,40 @@ footer {
 
 footer i {
     font-size: 20px;
+}
+
+
+/* ### Media Queries  */
+
+/* -------- #Small Size Screen -------- */
+@media screen and (max-width:600px) {
+    body{
+        min-height: 100vh;
+    }
+    header nav{
+        padding: 1rem;
+    }
+    .main{
+        padding: 1rem .5rem;
+    }
+    .search-box{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .weather-details{
+        padding: .5rem;
+    }
+
+    .weather-info-item{
+        width: 100%;
+    }
+
+    .chart{
+        width: 100%;
+    }
+    #preloader{
+        width: 100%;
+        height: 50vh;
+    }
 }

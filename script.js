@@ -207,8 +207,3 @@ function displayWeatherDetails(data) {
 };
 
 
-
-
-
-getWeather();
-
