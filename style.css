@@ -204,10 +204,11 @@ input::placeholder {
     }
 
     50% {
-        transform: scale(1.5);
+        transform: scale(1.25);
         /* Adjust scale value as needed */
     }
 }
+
 
 
 
@@ -258,6 +259,7 @@ input::placeholder {
     cursor: pointer;
     background-color: #00000010;
     box-shadow: 0 5px 12px var(--txt-color);
+    transform: scale(1.05) translateY(-5px);
 }
 
 .weather-info-item:hover p {
@@ -329,7 +331,7 @@ input::placeholder {
 #preloader{
     width: 350px;
     height: 350px;
-    margin: 2rem auto;
+    margin: 0 auto;
     overflow: hidden;
     border-radius: 50%;
 }
