@@ -110,7 +110,7 @@ input::placeholder {
 }
 
 
-
+/* # weather details  */
 .weather-details {
     margin-top: 1rem;
     height: 69vh;
@@ -120,6 +120,99 @@ input::placeholder {
     padding: 1rem;
     border-radius: 5px;
 }
+
+/* # weather animation */
+
+
+.animation-container {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+}
+
+.stage {
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 1rem;
+    display: none;
+}
+
+.stage i {
+    font-size: 30px;
+}
+
+
+
+#cloud{
+    animation: shake .5s infinite;
+}
+#gear {
+    animation: rotate-gear 2s infinite;
+}
+#done {
+    animation: done 2s infinite;
+}
+
+
+.stage.active{
+    display: block;
+}
+
+
+/* # shake animation  */
+@keyframes shake {
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(-5px);
+    }
+    50%{
+        transform: translateX(5px);
+    }
+    75%{
+        transform: translateX(-5px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+/* # rotate animation */
+@keyframes rotate-gear {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+        animation-timing-function: ease-in-out;
+    }
+}
+
+/* # done animation  */
+
+@keyframes done {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+        /* Adjust scale value as needed */
+    }
+}
+
+
+
 
 .details-header {
     margin: .5rem 0;
@@ -306,7 +399,16 @@ footer i {
     .weather-details{
         padding: .5rem;
     }
-
+    .animation-container{
+        padding: .5rem;
+    }
+    .stage{
+        padding: 1rem;
+        font-size: 14px;
+    }
+    .stage i{
+        font-size: 18px;
+    }
     .weather-info-item{
         width: 100%;
     }
