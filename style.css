@@ -125,23 +125,21 @@ input::placeholder {
 
 
 .animation-container {
-    /* display: flex; */
+    /* width: 50%; */
     justify-content: center;
     align-items: center;
-    background-color: #fff;
-    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 2rem auto;
+    background-color: var(--para-bg);
 }
 
 .stage {
-    padding: 2rem;
+    padding: 2rem 1rem;
     text-align: center;
-    border: 1px solid #ddd;
     border-radius: 5px;
     margin: 1rem;
     display: none;
+    text-transform: capitalize;
 }
 
 .stage i {

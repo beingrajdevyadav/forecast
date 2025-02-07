@@ -13,7 +13,7 @@ let chartTempData = [];
 
 async function getWeather() {
   const cityName = document.getElementById("cityName").value;
-  
+
 
   // to check if cityName is empty
   if (cityName == "") {
@@ -21,7 +21,7 @@ async function getWeather() {
     return;
   }
 
-  
+
   const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=64e2f747f1aca12bf9df7a71c52c69b6&units=metric`;
 
   try {
@@ -30,43 +30,32 @@ async function getWeather() {
     // console.log(data.cod);
 
     if (data.cod == "404") {
-      console.log("City Not Found!",cityName )
+      console.log("City Not Found!", cityName)
       document.getElementById("cityName").value = "";
       // document.getElementById("weatherInfo").innerHTML = `<h2>City Not Found</h2>`;
       return;
     }
 
     // to show search animation
-showProgressAnimation(cityName);
+    showProgressAnimation(cityName);
+document.querySelector("#done-txt").innerHTML = `Weather in ${cityName}`;
 
-
-    // console.log(data);
-    // console.log(data.main);
-    // console.log(currentChart);
     chartTempData = [];
     chartTempData.push(data.main.feels_like, data.main.temp_min - 6, data.main.temp, data.main.temp_max + 5);
 
-
-
-    if (currentChart == undefined) {
-      // to hide preloader
-      document.querySelector("#preloader").style.display = "none";
-      // to display weather details
-      displayWeatherDetails(data);
-      // to create chart
-      createChart("bar");
-    } else {
-      // to hide preloader
-      document.querySelector("#preloader").style.display = "none";
-      // to display weather details
-      displayWeatherDetails(data);
-       // to create chart
-      currentChart.destroy();
-      createChart("bar");
-     
-    }
-
-
+    setTimeout(() =>{
+      if (currentChart == undefined) {
+        document.querySelector("#preloader").style.display = "none";
+        displayWeatherDetails(data);
+        createChart("bar");
+      } else {
+        document.querySelector("#preloader").style.display = "none";
+        displayWeatherDetails(data);
+        currentChart.destroy();
+        createChart("bar");
+  
+      }
+    } , 8000);
 
   } catch (error) {
     console.error(error);
@@ -81,7 +70,7 @@ showProgressAnimation(cityName);
 
 function createChart(type) {
   // to show chartWrapper <div></div>
-  document.querySelector("#chartWrapper").style.display ="block";
+  document.querySelector("#chartWrapper").style.display = "block";
   const ctx = document.getElementById('tempChart');
 
   if (type == "line" || type == "bar") {
@@ -161,7 +150,6 @@ function displayWeatherDetails(data) {
 
   const weatherInfoWrapper = document.querySelector("#weatherInfoWrapper");
 
-  document.querySelector("#currentLocation").innerHTML = `Weather In ${data.name}`;
 
   let weatherInfo = `
  <div class="weather-info-item">
@@ -222,7 +210,7 @@ function displayWeatherDetails(data) {
 //           Show Progress Animation
 // ---------------------------------------- 
 
-function showProgressAnimation (cty) {
+function showProgressAnimation(cty) {
 
 
   const citySpan = document.querySelector("#city");
@@ -232,23 +220,23 @@ function showProgressAnimation (cty) {
   const stages = document.querySelectorAll('.stage');
   let currentStage = 0;
   function showStage(index) {
-      stages.forEach((stage, idx) => {
-          stage.classList.remove('active');
-          if (idx === index) {
-              stage.classList.add('active');
-          }
-      });
+    stages.forEach((stage, idx) => {
+      stage.classList.remove('active');
+      if (idx === index) {
+        stage.classList.add('active');
+      }
+    });
   }
 
   function nextStage() {
-      if (currentStage < stages.length - 1) {
-          currentStage++;
-          showStage(currentStage);
-      }
+    if (currentStage < stages.length - 1) {
+      currentStage++;
+      showStage(currentStage);
+    }
   };
 
   showStage(currentStage);
-  setTimeout(() => nextStage(), 2000); // Show "Weather in [City Name]" for 2 seconds
+  setTimeout(() => nextStage(), 500); // Show "Weather in [City Name]" for 2 seconds
   setTimeout(() => nextStage(), 4000); // Show "Fetching Data..." for 2 seconds
-  setTimeout(() => nextStage(), 6000); // Show "Successful" for 2 seconds
+  setTimeout(() => nextStage(), 7000); // Show "Successful" for 2 seconds
 };
