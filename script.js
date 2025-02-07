@@ -30,9 +30,17 @@ async function getWeather() {
     // console.log(data.cod);
 
     if (data.cod == "404") {
-      console.log("City Not Found!", cityName)
+      // console.log("City Not Found!", cityName)
       document.getElementById("cityName").value = "";
-      // document.getElementById("weatherInfo").innerHTML = `<h2>City Not Found</h2>`;
+     
+      document.querySelector("#done-stage").innerHTML = `
+      <i class="fa-solid fa-circle-exclamation" id="done"></i>
+
+      <h3 id="done-txt">${cityName} is Not Found!</h3>
+      `;
+
+      // to show search animation
+    showProgressAnimation(cityName);
       return;
     }
 
