@@ -29,6 +29,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    position: relative;
 }
 
 
@@ -244,6 +245,26 @@ input::placeholder {
 #preloader img{
     width: 100%;
     box-shadow: 0 10px 20px var(--light-bg-color);
+}
+
+/* #toast notifications  */
+.toast{
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    background-color: #932566;
+    border-radius: 10px;
+    font-size: 12px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+.toast .toast-icon{
+    font-size: 20px;
 }
 footer {
     width: 100%;

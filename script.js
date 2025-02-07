@@ -13,10 +13,16 @@ let chartTempData = [];
 
 async function getWeather() {
   const cityName = document.getElementById("cityName").value;
-  // let cityName = "Noida";
+  
 
-  const API_KEY = "64e2f747f1aca12bf9df7a71c52c69b6";
-  const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`;
+  // to check if cityName is empty
+  if (cityName == "") {
+    console.log("Please Enter City Name");
+    return;
+  }
+
+  
+  const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=64e2f747f1aca12bf9df7a71c52c69b6&units=metric`;
 
   try {
     const response = await fetch(API_URL);
@@ -24,8 +30,9 @@ async function getWeather() {
     // console.log(data.cod);
 
     if (data.cod == "404") {
+      console.log("City Not Found!",cityName )
       document.getElementById("cityName").value = "";
-      document.getElementById("weatherInfo").innerHTML = `<h2>City Not Found</h2>`;
+      // document.getElementById("weatherInfo").innerHTML = `<h2>City Not Found</h2>`;
       return;
     }
 
